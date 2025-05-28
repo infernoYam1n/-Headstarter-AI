@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200">
+  <!-- Background (can be removed for transparency) -->
+  
+  <!-- Main Y symbol -->
+  <g transform="translate(50, 20)">
+    <!-- Left stroke of Y -->
+    <path d="M40 20 L80 70" 
+          stroke="#2DD4BF" 
+          stroke-width="12" 
+          stroke-linecap="round"/>
+    
+    <!-- Right stroke of Y -->
+    <path d="M120 20 L80 70" 
+          stroke="#2DD4BF" 
+          stroke-width="12" 
+          stroke-linecap="round"/>
+    
+    <!-- Bottom stroke of Y -->
+    <path d="M80 65 L80 120" 
+          stroke="#0F766E" 
+          stroke-width="12" 
+          stroke-linecap="round"/>
+    
+    <!-- Decorative element -->
+    <circle cx="80" cy="70" r="8" fill="#5EEAD4"/>
+  </g>
+  
+  <!-- Company name (optional) -->
+  <text x="150" y="170" 
+        font-family="Arial, sans-serif" 
+        font-size="32" 
+        font-weight="500" 
+        text-anchor="middle" 
+        fill="#64748B">
+    yamin
+  </text>
+</svg>

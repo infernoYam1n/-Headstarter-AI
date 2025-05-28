@@ -1,0 +1,651 @@
+/* Enhanced Teams block styling - Professional Wizarding Theme */
+:root {
+  /* Main color palette */
+  --color-primary: #4b2864; /* Purple */
+  --color-secondary: #1a472a; /* Dark Green */
+  --color-tertiary: #740001; /* Gryffindor Red */
+  --color-quaternary: #0e1a40; /* Ravenclaw Blue */
+  
+  /* Neutrals and backgrounds */
+  --color-background: #fcfcfc;
+  --color-background-alt: #f5f5f7;
+  --color-card-bg: #ffffff;
+  --color-heading: #2e2e2e;
+  --color-text: #333333;
+  --color-text-lighter: #666666;
+  --color-border: #e6e6e6;
+  
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-quaternary) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-tertiary) 100%);
+  
+  /* Spacing */
+  --space-xxxl: 5rem;
+  --space-xxl: 3rem;
+  --space-xl: 2rem;
+  --space-lg: 1.5rem;
+  --space-md: 1rem;
+  --space-sm: 0.75rem;
+  --space-xs: 0.5rem;
+  
+  /* Border radius */
+  --border-radius-lg: 8px;
+  --border-radius-md: 6px;
+  --border-radius-sm: 4px;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.15);
+  
+  /* Animations */
+  --transition-fast: 0.2s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* Base section styling */
+.teams-block {
+  padding: var(--space-xxxl) 0;
+  background: var(--color-background-alt);
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.teams-block .container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* Title styling */
+.teams-block .title-holder {
+  text-align: center;
+  margin-bottom: var(--space-xxl);
+  position: relative;
+}
+
+.teams-block .title-holder::after {
+  content: '';
+  display: block;
+  width: 120px;
+  height: 4px;
+  background: var(--gradient-primary);
+  margin: var(--space-sm) auto 0;
+  border-radius: 4px;
+}
+
+.teams-block .title-holder h1 {
+  font-size: 2.75rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin-bottom: var(--space-sm);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.teams-block .title-holder .subtitle {
+  font-size: 1.35rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-md);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Search and filter controls */
+.teams-block .controls-wrapper {
+  background: var(--color-card-bg);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.teams-block .house-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.teams-block .filter-btn {
+  margin-right: var(--space-xs);
+  border-width: 2px;
+  font-weight: 500;
+  transition: all var(--transition-medium);
+}
+
+.teams-block .sort-options {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+}
+
+.teams-block .sort-btn {
+  font-size: 0.9rem;
+  padding: 0.25rem 0.75rem;
+  margin-right: var(--space-xs);
+}
+
+.teams-block .results-count {
+  font-size: 0.95rem;
+  color: var(--color-text-lighter);
+  font-style: italic;
+}
+
+/* Card styling */
+.teams-block .team-card {
+  background: var(--color-card-bg);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+  margin-bottom: var(--space-xl);
+  height: 600px;
+  border: 1px solid var(--color-border);
+}
+
+.teams-block .team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-lg);
+}
+
+.teams-block .team-card.featured {
+  border: 2px solid var(--color-primary);
+  box-shadow: 0 10px 20px rgba(75, 40, 100, 0.2);
+}
+
+/* Image styling */
+.teams-block .image {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.teams-block .image img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.teams-block .team-card:hover .image img {
+  transform: scale(1.1);
+}
+
+/* Overlay with social icons */
+.teams-block .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(75, 40, 100, 0.85), rgba(26, 71, 42, 0.85));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-md);
+  opacity: 0;
+  transition: opacity var(--transition-medium);
+}
+
+.teams-block .image:hover .overlay {
+  opacity: 1;
+}
+
+.teams-block .socials ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-md);
+  display: flex;
+  gap: var(--space-sm);
+}
+
+/* Continuing from the previous CSS */
+
+.teams-block .socials ul li {
+  display: inline-block;
+}
+
+.teams-block .socials ul li a {
+  background: var(--color-card-bg);
+  color: var(--color-primary);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  transition: all var(--transition-medium);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.teams-block .socials ul li a:hover {
+  background: var(--color-secondary);
+  color: var(--color-card-bg);
+  transform: translateY(-3px) scale(1.1);
+}
+
+.teams-block .view-profile-btn {
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all var(--transition-medium);
+}
+
+.teams-block .view-profile-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Content area styling */
+.teams-block .content {
+  padding: var(--space-lg);
+  text-align: center;
+  position: relative;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.teams-block .content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.teams-block .content h3 {
+  font-size: 1.35rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  margin: var(--space-sm) 0;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.teams-block .content .designation {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-sm);
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+.teams-block .content p {
+  color: var(--color-text);
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.teams-block .details-btn {
+  border-width: 2px;
+  border-radius: 10px;
+  font-weight: 500;
+  padding: 0.4rem 1.5rem;
+  transition: all var(--transition-medium);
+  background-color: var(--color-primary);
+  border-color: var(--color-card-bg);
+  color: #f0e5f8;
+}
+
+.teams-block .details-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Badge styling */
+.teams-block .house-badge {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bold;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  z-index: 2;
+  transition: all var(--transition-medium);
+}
+
+.teams-block .house-badge:hover {
+  transform: scale(1.15);
+}
+
+.teams-block .featured-badge {
+  position: absolute;
+  top: var(--space-md);
+  left: var(--space-md);
+  background: linear-gradient(135deg, #ffd700, #ff9500);
+  color: #543100;
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+.teams-block .featured-badge i {
+  font-size: 0.75rem;
+}
+
+/* Modal styling */
+.profile-modal .modal-header {
+  border-bottom: none;
+  padding: var(--space-md) var(--space-lg);
+}
+
+.profile-modal .modal-title {
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
+.profile-modal .house-name-badge {
+  font-size: 0.85rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2px 12px;
+  margin-left: var(--space-sm);
+}
+
+.profile-modal .modal-body {
+  padding: var(--space-lg);
+}
+
+.profile-modal .profile-image {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.profile-modal .profile-info {
+  background: var(--color-background-alt);
+  padding: var(--space-md);
+  border-radius: var(--border-radius-md);
+  text-align: center;
+}
+
+.profile-modal .profile-info h4 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.profile-modal .social-links {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-xs);
+  margin-top: var(--space-md);
+}
+
+.profile-modal .social-link {
+  background: var(--color-primary);
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-medium);
+}
+
+.profile-modal .social-link:hover {
+  transform: translateY(-3px);
+  background: var(--color-secondary);
+}
+
+.profile-modal .profile-details h4 {
+  font-size: 1.2rem;
+  color: var(--color-background-alt);
+  margin: var(--space-md) 0 var(--space-sm);
+  font-weight: 600;
+  position: relative;
+  padding-bottom: var(--space-xs);
+}
+
+.profile-modal .profile-details h4::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
+}
+
+.profile-modal .profile-details p {
+  line-height: 1.7;
+  color: #979494;
+  margin-bottom: var(--space-md);
+}
+
+.profile-modal .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.profile-modal .skill-badge {
+  background: #d3a625;
+  border: 1px solid var(--color-primary);
+  color: var(--color-text);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.profile-modal .achievements-list {
+  padding-left: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.profile-modal .achievements-list li {
+  margin-bottom: var(--space-xs);
+  position: relative;
+  color: #979494;
+}
+
+.profile-modal .achievements-list li::marker {
+  color: var(--color-primary);
+}
+
+/* No results state */
+.teams-block .no-results {
+  text-align: center;
+  padding: var(--space-xxl) var(--space-md);
+  background: var(--color-background);
+  border-radius: var(--border-radius-lg);
+  color: var(--color-text-lighter);
+}
+
+.teams-block .no-results i {
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.teams-block .no-results h3 {
+  color: var(--color-heading);
+  margin-bottom: var(--space-sm);
+}
+
+.teams-block .no-results p {
+  margin-bottom: var(--space-md);
+}
+
+/* Media Queries */
+@media (max-width: 1199px) {
+  .teams-block .title-holder h1 {
+    font-size: 2.5rem;
+  }
+  
+  .teams-block .title-holder .subtitle {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .teams-block .team-card {
+    margin-bottom: var(--space-lg);
+  }
+  
+  .teams-block .sort-options {
+    justify-content: flex-start;
+    margin-top: var(--space-md);
+  }
+  
+  .teams-block .title-holder h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .teams-block {
+    padding: var(--space-xxl) 0;
+  }
+  
+  .teams-block .image img {
+    height: 280px;
+  }
+  
+  .teams-block .title-holder {
+    margin-bottom: var(--space-xl);
+  }
+  
+  .teams-block .title-holder h1 {
+    font-size: 2rem;
+  }
+  
+  .teams-block .title-holder .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .teams-block .controls-wrapper {
+    padding: var(--space-md);
+  }
+  
+  .profile-modal .profile-image {
+    margin-bottom: var(--space-md);
+  }
+}
+
+@media (max-width: 575px) {
+  .teams-block .title-holder h1 {
+    font-size: 1.75rem;
+  }
+  
+  .teams-block .image img {
+    height: 250px;
+  }
+  
+  .teams-block .house-filters,
+  .teams-block .sort-options {
+    justify-content: center;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Add animation to featured cards */
+.teams-block .team-card.featured {
+  animation: pulse 4s infinite;
+}
+
+/* Add CSS variables for wizarding house-specific colors */
+.gryffindor-theme {
+  --house-primary: #740001;
+  --house-secondary: #d3a625;
+}
+
+.slytherin-theme {
+  --house-primary: #1a472a;
+  --house-secondary: #5d5d5d;
+}
+
+.ravenclaw-theme {
+  --house-primary: #0e1a40;
+  --house-secondary: #946b2d;
+}
+
+.hufflepuff-theme {
+  --house-primary: #ecb939;
+  --house-secondary: #372e29;
+}
+
+/* Add print styles for CV-like printing */
+@media print {
+  .teams-block {
+    background: white;
+    padding: 0;
+  }
+  
+  .teams-block .title-holder,
+  .teams-block .controls-wrapper,
+  .teams-block .results-count,
+  .teams-block .socials,
+  .teams-block .view-profile-btn,
+  .teams-block .details-btn {
+    display: none;
+  }
+  
+  .teams-block .team-card {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+  
+  .teams-block .row {
+    display: block;
+  }
+  
+  .teams-block .col-md-6,
+  .teams-block .col-lg-3 {
+    width: 100%;
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+}

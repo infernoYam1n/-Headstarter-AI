@@ -1,0 +1,46 @@
+:root {
+  --color-background: #ffffff;
+  --color-text: #2c3e50;
+  --color-heading: #102a43;
+  --color-primary: #1a73e8;
+  --color-primary-dark: #1557b7;
+  --color-success: #34a853;
+  --color-warning: #fbbc05;
+  --color-danger: #ea4335;
+  --color-border: #e2e8f0;
+  --color-background-alt: #f0f4f8;
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Cinzel', serif;
+  --font-code: 'source-code-pro', Menlo, Monaco, Consolas, 'Courier New', monospace;
+  --border-radius-sm: 0.25rem;
+  --border-radius-md: 0.5rem;
+  --border-radius-lg: 1rem;
+  --border-radius-round: 50%;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+  --transition-standard: 0.3s ease;
+  --transition-speed: 0.4s ease;
+  --container-max-width: 1200px;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-xxl: 4rem;
+  --space-xxxl: 6rem;
+  --z-index-fixed: 1000;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: var(--font-code);
+}

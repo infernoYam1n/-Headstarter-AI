@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daichi Toyoda | AI & Software Engineer</title>
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #555;
+            --accent-color: #3b82f6;
+            --light-bg: #f9fafb;
+            --dark-bg: #111827;
+            --border-color: #e5e7eb;
+            --card-bg: #ffffff;
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+        
+        body {
+            color: var(--primary-color);
+            background-color: var(--light-bg);
+            line-height: 1.7;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 30px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+        
+        nav a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        
+        nav a:hover {
+            color: var(--accent-color);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-icons a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 18px;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        .section {
+            margin: 80px 0;
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.03);
+        }
+        
+        .section-title {
+            font-size: 16px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        h2 {
+            font-size: 32px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .about-image {
+            flex: 0 0 200px;
+            height: 200px;
+            background-color: var(--light-bg);
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            border: 4px solid white;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+        
+        .about-details {
+            flex: 1;
+        }
+        
+        .about-details h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+        
+        .about-details p {
+            color: var(--secondary-color);
+            font-size: 16px;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .skill-bars {
+            margin-top: 30px;
+        }
+        
+        .skill-bar {
+            margin-bottom: 20px;
+        }
+        
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-name {
+            font-weight: 500;
+        }
+        
+        .skill-percent {
+            color: var(--secondary-color);
+        }
+        
+        .skill-progress {
+            height: 8px;
+            background-color: var(--light-bg);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .skill-progress-bar {
+            height: 100%;
+            background-color: var(--accent-color);
+            border-radius: 4px;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            margin-top: 50px;
+            gap: 20px;
+        }
+        
+        .stat {
+            flex: 1;
+            background-color: var(--light-bg);
+            padding: 30px 20px;
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+        
+        .stat:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+        
+        .education-experience {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .education, .experience {
+            flex: 1;
+        }
+        
+        .timeline-item {
+            margin-bottom: 40px;
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--border-color);
+        }
+        
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            left: -8px;
+            top: 5px;
+        }
+        
+        .timeline-date {
+            font-size: 14px;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .timeline-title {
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-subtitle {
+            font-size: 16px;
+            color: var(--secondary-color);
+        }
+        
+        .timeline-description {
+            margin-top: 12px;
+            font-size: 15px;
+            color: var(--secondary-color);
+        }
+        
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .portfolio-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+            height: 250px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .portfolio-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .portfolio-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            opacity: 0.9;
+            transition: var(--transition);
+        }
+        
+        .portfolio-item:hover .portfolio-overlay {
+            opacity: 1;
+        }
+        
+        .portfolio-title {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .portfolio-category {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+        }
+        
+        .blog-posts {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .blog-post {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .blog-post:hover .blog-image img {
+            transform: scale(1.05);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-date {
+            font-size: 14px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .blog-title {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 18px;
+            line-height: 1.4;
+        }
+        
+        .blog-title a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .blog-title a:hover {
+            color: var(--accent-color);
+        }
+        
+        .blog-excerpt {
+            color: var(--secondary-color);
+            font-size: 15px;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            font-size: 14px;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            transition: var(--transition);
+        }
+        
+        .read-more svg {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            color: var(--primary-color);
+        }
+        
+        .read-more:hover svg {
+            transform: translateX(3px);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+        }
+        
+        .contact-info h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .contact-info p {
+            margin-bottom: 25px;
+            font-size: 16px;
+            color: var(--secondary-color);
+            line-height: 1.8;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-icon {
+            flex: 0 0 40px;
+            height: 40px;
+            background-color: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+        }
+        
+        .contact-text {
+            flex: 1;
+        }
+        
+        .contact-label {
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        .contact-value {
+            color: var(--secondary-color);
+        }
+        
+        .contact-value a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .contact-value a:hover {
+            color: var(--accent-color);
+        }
+        
+        .contact-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group:nth-child(3),
+        .form-group:nth-child(4),
+        .form-group:nth-child(5) {
+            grid-column: 1 / -1;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 15px;
+            transition: var(--transition);
+            background-color: var(--light-bg);
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn:hover {
+            background-color: #2563eb;
+            transform: translateY(-2px);
+        }
+        
+        .btn svg {
+            width: 18px;
+            height: 18px;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--secondary-color);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+            margin-top: 80px;
+        }
+        
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .education-experience {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+            
+            .portfolio-grid,
+            .blog-posts {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Dark mode styles */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary-color: #f9fafb;
+                --secondary-color: #9ca3af;
+                --accent-color: #60a5fa;
+                --light-bg: #111827;
+                --dark-bg: #0f172a;
+                --border-color: #1f2937;
+                --card-bg: #1e293b;
+            }
+            
+            .social-icons a,
+            nav a {
+                color: #e5e7eb;
+            }
+            
+            .form-control {
+                background-color: #1f2937;
+                color: #e5e7eb;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Daichi <span>Toyoda</span></div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="social-icons">
+            <a href="#" aria-label="Twitter">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                </svg>
+            </a>
+            <a href="#" aria-label="Github">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                </svg>
+            </a>
+            <a href="#" aria-label="LinkedIn">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                    <rect x="2" y="9" width="4" height="12"></rect>
+                    <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+            </a>
+        </div>
+    </header>
+    
+    <main>
+        <section id="about" class="section">
+            <div class="section-title">About Me</div>
+            <div class="about-content">
+                <div class="about-image">
+                    <svg width="80" height="80" viewBox="0 0 80 80">
+                        <path d="M40,12c-15.5,0-28,12.5-28,28s12.5,28,28,28s28-12.5,28-28S55.5,12,40,12z M40,60c-11,0-20-9-20-20s9-20,20-20s20,9,20,20S51,60,40,60z" fill="#60a5fa"/>
+                        <circle cx="30" cy="35" r="3" fill="#1e293b"/>
+                        <circle cx="50" cy="35" r="3" fill="#1e293b"/>
+                        <path d="M40,45c-4,0-7.5,3-8,7h16C47.5,48,44,45,40,45z" fill="#1e293b"/>
+                    </svg>
+                </div>
+                <div class="about-details">
+                    <h2>AI & Software Engineering Professional</h2>
+                    <p>I'm a passionate AI and Software Engineer with extensive experience in developing cutting-edge solutions using modern technologies. Specialized in building scalable applications with a focus on artificial intelligence, backend systems, and web technologies.</p>
+                    <p>With 7+ years of industry experience across various domains, I bring a strategic approach to technical challenges and deliver innovative solutions that drive business growth and efficiency.</p>
+                    
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Artificial Intelligence & Machine Learning</span>
+                                <span class="skill-percent">70%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 70%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Backend Development</span>
+                                <span class="skill-percent">65%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 65%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Frontend Development</span>
+                                <span class="skill-percent">45%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 45%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">7+</div>
+                    <div class="stat-label">Years of Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Satisfied Clients</div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="resume" class="section">
+            <div class="section-title">Resume</div>
+            <h2>Education & Experience</h2>
+            
+            <div class="education-experience">
+                <div class="education">
+                    <h3 style="margin-bottom: 30px; font-size: 22px;">Education</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2014 - 2017</div>
+                        <div class="timeline-title">Bachelor of Computer Science</div>
+                        <div class="timeline-subtitle">Okayama University</div>
+                        <div class="timeline-description">Specialized in Machine Learning and Artificial Intelligence with honors. Thesis on Neural Network Applications in Image Recognition.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018</div>
+                        <div class="timeline-title">AI & Deep Learning Certification</div>
+                        <div class="timeline-subtitle">Tokyo Institute of Technology</div>
+                        <div class="timeline-description">Advanced certification in Deep Learning architectures and implementations.</div>
+                    </div>
+                </div>
+                
+                <div class="experience">
+                    <h3 style="margin-bottom: 30px; font-size: 22px;">Experience</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Feb 2023 - Present</div>
+                        <div class="timeline-title">AI & Software Engineering Lead</div>
+                        <div class="timeline-subtitle">Pixl Technologies</div>
+                        <div class="timeline-description">Leading the development of AI-powered image processing solutions. Architecting scalable software systems and managing cross-functional teams.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Apr 2021 - Dec 2022</div>
+                        <div class="timeline-title">Lead Software Engineer</div>
+                        <div class="timeline-subtitle">ByterDesign</div>
+                        <div class="timeline-description">Managed a team of 6 developers working on enterprise-level applications. Implemented CI/CD pipelines and microservices architecture.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Jul 2019 - Dec 2020</div>
+                        <div class="timeline-title">AI & Backend Engineer</div>
+                        <div class="timeline-subtitle">NetHive Systems</div>
+                        <div class="timeline-description">Developed prediction models and recommendation systems. Built API services and data pipelines for high-volume applications.</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">Aug - Dec 2018</div>
+                        <div class="timeline-title">Software Engineer</div>
+                        <div class="timeline-subtitle">PixelLab</div>
+                        <div class="timeline-description">Developed and maintained web applications using modern JavaScript frameworks. Implemented RESTful APIs and database solutions.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="portfolio" class="section">
+            <div class="section-title">Portfolio</div>
+            <h2>Featured Projects</h2>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/320" alt="Stable Diffusion Web UI">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">Stable Diffusion Web UI</div>
+                        <div class="portfolio-category">AI / Frontend Development</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/320" alt="Stable Diffusion Lite">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">Stable Diffusion Lite</div>
+                        <div class="portfolio-category">AI / Backend Development</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/320" alt="Midjourney Web">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">Midjourney Web Interface</div>
+                        <div class="portfolio-category">AI / Full Stack</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/320" alt="Content Creation App">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">AI Content Creation Suite</div>
+                        <div class="portfolio-category">AI / SaaS Development</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/320" alt="Electron App">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">Electron Web3 Application</div>
+                        <div class="portfolio-category">Blockchain / Desktop Development</div>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <img src="/api/placeholder/400/320" alt="Dashboard UI">
+                    <div class="portfolio-overlay">
+                        <div class="portfolio-title">Analytics Dashboard</div>
+                        <div class="portfolio-category">Frontend / Data Visualization</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="blog" class="section">
+            <div class="section-title">Blog</div>
+            <h2>Latest Articles</h2>
+            
+            <div class="blog-posts">
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <img src="/api/placeholder/400/320" alt="Python & Selenium">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">August 25, 2024</div>
+                        <h3 class="blog-title">
+                            <a href="#">Advanced Web Scraping Techniques with Python and Selenium</a>
+                        </h3>
+                        <p class="blog-excerpt">Learn how to efficiently extract data from complex websites using Python's Selenium framework with practical examples and optimization techniques.</p>
+                        <a href="#" class="read-more">
+                            Read Article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <img src="/api/placeholder/400/320" alt="C# Chatbot">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">July 8, 2024</div>
+                        <h3 class="blog-title">
+                            <a href="#">Building Enterprise-Grade Chatbots with C# and ChatGPT API</a>
+                        </h3>
+                        <p class="blog-excerpt">A comprehensive guide to integrating OpenAI's ChatGPT API with C# applications to create responsive, intelligent conversational interfaces for business use cases.</p>
+                        <a href="#" class="read-more">
+                            Read Article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="blog-post">
+                    <div class="blog-image">
+                        <img src="/api/placeholder/400/320" alt="Angular vs React">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">July 28, 2024</div>
+                        <h3 class="blog-title">
+                            <a href="#">Angular vs React: A .NET Developer's Perspective</a>
+                        </h3>
+                        <p class="blog-excerpt">An in-depth analysis of why many .NET developers prefer Angular's structured approach over React when building enterprise applications with C# backends.</p>
+                        <a href="#" class="read-more">
+                            Read Article
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="contact" class="section">
+            <div class="section-title">Contact</div>
+            <h2>Get In Touch</h2>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Let's Connect</h3>
+                    <p>I'm currently open to new opportunities and collaborations. Feel free to reach out if you have a project in mind or just want to discuss technology.</p>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-value">+81 34-297-8357</div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-label">Email</div>
+                            <div class="contact-value">
+                                <a href="mailto:daichi.toyoda@gmail.com">daichi.toyoda@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-detail">
+                        <div class="contact-icon">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                        </div>
+                        <div class="contact-text">
+                            <div class="contact-label">Location</div>
+                            <div class="contact-value">Tokyo, Japan</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Full Name*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Email Address*" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Your Message*" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn">
+                            Send Message
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Daichi Toyoda. All Rights Reserved.</p>
+    </footer>
+    
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const sectionId = this.getAttribute('href');
+                const section = document.querySelector(sectionId);
+                
+                window.scrollTo({
+                    top: section.offsetTop - 20,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = this.querySelector('input[placeholder="Full Name*"]').value;
+            const email = this.querySelector('input[placeholder="Email Address*"]').value;
+            const subject = this.querySelector('input[placeholder="Subject"]').value;
+            const message = this.querySelector('textarea').value;
+            
+            // Validate form
+            if (!name || !email || !message) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+            
+            // Here you would typically send the data to a server
+            console.log({
+                name,
+                email,
+                subject,
+                message
+            });
+            
+            // Show success message
+            alert('Your message has been sent successfully!');
+            
+            // Reset the form
+            this.reset();
+        });
+        
+        // Add active class to nav items on scroll
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navItems = document.querySelectorAll('nav a');
+            
+            let currentSectionIndex = 0;
+            
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (window.scrollY >= sectionTop - 100 && 
+                    window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionIndex = index;
+                }
+            });
+            
+            navItems.forEach(item => item.classList.remove('active'));
+            navItems[currentSectionIndex].classList.add('active');
+        });
+    </script>
+</body>
+</html>

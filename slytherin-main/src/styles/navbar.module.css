@@ -1,0 +1,438 @@
+/**
+ * Navbar Module - Professional CSS
+ */
+
+/* Variables */
+:root {
+  /* Main colors */
+  --primary-color: #1a472a;
+  --primary-hover: #2a623d;
+  --secondary-color: #5d5d5d;
+  --text-color: #333333;
+  --text-light: #ffffff;
+  
+  /* Background colors */
+  --bg-light: #ffffff;
+  --bg-transparent: rgba(255, 255, 255, 0.8);
+  --bg-transparent-darker: rgba(255, 255, 255, 0.95);
+  
+  /* Shadow and effects */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --blur-effect: blur(10px);
+  
+  /* Transitions */
+  --transition-fast: 0.2s ease;
+  --transition-standard: 0.3s ease;
+  
+  /* Spacing and sizing */
+  --content-max-width: 1200px;
+  --header-height: 80px;
+  --header-height-scrolled: 60px;
+  --border-radius: 6px;
+  --border-width: 2px;
+}
+/* Example CSS for the close button */
+.mobileNavClose {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333; /* Adjust color as needed */
+}/* Example CSS for z-index */
+.mobileNavClose {
+  z-index: 1001; /* Ensure this is higher than the overlay */
+}
+
+.overlay {
+  z-index: 1000;
+}
+/* Base Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  transition: var(--transition-standard);
+}
+
+.headerContainer {
+  width: 100%;
+  max-width: var(--content-max-width);
+  height: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  margin: 1rem auto;
+  border-radius: var(--border-radius);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  backdrop-filter: var(--blur-effect);
+  background-color: var(--bg-transparent);
+  box-shadow: var(--shadow-md);
+  transition: var(--transition-standard);
+  border-left: 5px solid var(--primary-color);
+  border-right: 5px solid var(--primary-color);
+  animation: borderAnimation 10s infinite;
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-color: #914ae2; /* Start color */
+  }
+  25% {
+    border-color: #9c5fe7; /* Intermediate color */
+  }
+  50% {
+    border-color: #093669; /* Intermediate color */
+  }
+  75% {
+    border-color: #8f6abd; /* Intermediate color */
+  }
+  100% {
+    border-color: #914ae2; /* End color */
+  }
+}
+
+.headerContainerScrolled {
+  height: var(--header-height-scrolled);
+  margin-top: 0;
+  background-color: var(--bg-transparent-darker);
+  box-shadow: var(--shadow-lg);
+  height: 80px;
+}
+
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-decoration: none;
+  margin-right: 11.6rem;
+  transition: var(--transition-standard);
+  display: flex;
+  align-items: center;
+}
+
+.logoText {
+  transition: var(--transition-standard);
+}
+
+.logo:hover .logoText {
+  color: var(--primary-hover);
+}
+
+.logo:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+/* Navigation Links */
+.nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  color: var(--primary-color) !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: var(--transition-standard);
+  position: relative;
+  padding: 0.5rem 0;
+  margin-top: 35px;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: var(--transition-standard);
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.navLink:focus {
+  outline: none;
+  text-decoration: none;
+}
+
+/* Mobile Menu Button */
+.mobileMenuButton {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+}
+
+.mobileMenuButton:focus {
+  outline: 2px solid var(--primary-color);
+  border-radius: 4px;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-color);
+  position: relative;
+  transition: var(--transition-standard);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--text-color);
+  transition: var(--transition-standard);
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+.hamburger.open {
+  background: transparent;
+}
+
+.hamburger.open::before {
+  transform: rotate(45deg);
+}
+
+.hamburger.open::after {
+  transform: rotate(-45deg);
+}
+
+/* Mobile Navigation */
+.mobileNav {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 80%;
+  max-width: 320px;
+  height: 100vh;
+  background: var(--bg-light);
+  z-index: 1001;
+  transition: var(--transition-standard);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.mobileNav.open {
+  right: 0;
+}
+
+.mobileNavHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mobileNavClose {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: var(--transition-standard);
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.mobileNavClose:hover {
+  color: var(--primary-color);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.mobileNavClose:focus {
+  outline: 2px solid var(--primary-color);
+}
+
+.mobileNavLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin-top: 1rem;
+}
+
+.mobileNavLink {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: var(--transition-standard);
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mobileNavLink:hover,
+.mobileNavLink.active {
+  color: var(--primary-color);
+}
+
+.mobileNavLink.active {
+  font-weight: 600;
+}
+
+.mobileNavLink:focus {
+  outline: none;
+  text-decoration: underline;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .headerContainer {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none;
+  }
+
+  .mobileMenuButton {
+    display: block;
+  }
+  
+  .headerContainer {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .headerContainer {
+    height: 70px;
+    padding: 0 1rem;
+    margin: 0.5rem auto;
+  }
+  
+  .headerContainerScrolled {
+    height: 60px;
+  }
+  
+  .logo {
+    font-size: 1.25rem;
+  }
+  
+  .mobileNav {
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  
+  .mobileNavHeader {
+    margin-bottom: 1.5rem;
+  }
+  
+  .mobileNavLink {
+    padding: 0.875rem 0;
+  }
+}
+
+/* Printing Optimization */
+@media print {
+  .header {
+    position: static;
+    box-shadow: none;
+  }
+  
+  .headerContainer {
+    box-shadow: none;
+    border: none;
+    background: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Accessibility Focus Styles */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Animation for focus rings to provide more subtle visual feedback */
+@keyframes focusAnimation {
+  0% {
+    outline-offset: 2px;
+  }
+  50% {
+    outline-offset: 4px;
+  }
+  100% {
+    outline-offset: 2px;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
